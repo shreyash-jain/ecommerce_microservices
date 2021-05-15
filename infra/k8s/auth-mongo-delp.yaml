@@ -21,11 +21,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-mongo
+  name: auth-mongo-srv
 spec:
   selector:
     app: auth-mongo
   ports:
   - port: 27017
     name: db
+    protocol: TCP
     targetPort: 27017
