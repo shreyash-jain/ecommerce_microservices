@@ -15,10 +15,13 @@ export const requireAuth = (
     res: Response,
     next: NextFunction
 ) => {
+    console.log("current user 2");
 
     if (!req.currentUser) {
-        return new NotAutherizedError();
+        console.log("current user 3");
+        throw new NotAutherizedError();
     }
+    console.log("current user 4");
 
     next();
 }
